@@ -1,8 +1,8 @@
-name: android-build
+name: Android build
 on:
     workflow_call:
 jobs:
-    build-android:
+    android-build:
         runs-on: ubuntu-latest
         steps:
             - name: Build Android Release
