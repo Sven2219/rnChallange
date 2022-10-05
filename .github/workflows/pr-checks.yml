@@ -13,6 +13,3 @@ jobs:
     lint:
         name: Lint
         uses: ./.github/workflows/lint.yml
-    android-build:
-        name: Android build
-        uses: ./.github/workflows/android-build.yml
