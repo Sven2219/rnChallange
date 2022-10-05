@@ -10,6 +10,6 @@ concurrency:
     cancel-in-progress: true
 
 jobs:
-    lint-and-build:
-        name: Lint and build
-        uses: ./.github/workflows/lint-and-build.yml
+    lint:
+        name: Lint
+        uses: ./.github/workflows/lint.yml

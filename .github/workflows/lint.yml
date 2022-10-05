@@ -1,12 +1,11 @@
-name: Lint and build
+name: Lint
 
 on:
     workflow_call:
 
 jobs:
-    lint-and-build:
+    lint:
         runs-on: ubuntu-latest
-
         steps:
             - name: Checkout code
               uses: actions/checkout@v3
