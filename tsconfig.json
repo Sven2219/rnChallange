@@ -11,7 +11,8 @@
       "const/*": ["./const/*"],
       "hooks/*": ["./hooks/*"],
       "modules/*": ["./modules/*"],
-      "navigation/*":["./navigation/*"]
+      "navigation/*":["./navigation/*"],
+      "i18n/*":["./i18n/*"]
     }
   }
 }
