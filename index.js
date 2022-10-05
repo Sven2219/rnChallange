@@ -3,9 +3,9 @@
  */
 
 import { AppRegistry } from 'react-native';
+
 import './src/i18n';
-
 import { name as appName } from './app.json';
-import Router from '/navigation/Router';
+import App from '/App';
 
-AppRegistry.registerComponent(appName, () => Router);
+AppRegistry.registerComponent(appName, () => App);
