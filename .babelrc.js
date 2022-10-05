@@ -11,6 +11,7 @@ module.exports = {
 						hooks: './hooks/',
 						modules: './modules/',
 						navigation: './navigation/',
+						i18n: './i18n/',
 					},
 				],
 				extensions: ['.js', '.jsx', '.ts', '.tsx'],
