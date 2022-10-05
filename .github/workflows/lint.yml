@@ -35,3 +35,5 @@ jobs:
 
             - name: Lint app
               run: yarn run lint --cache --cache-strategy content --max-warnings 0
+            - name: Run tests
+              run: yarn test
