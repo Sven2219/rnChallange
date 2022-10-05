@@ -1,0 +1,38 @@
+name: Lint and build
+
+on:
+    workflow_call:
+
+jobs:
+    lint-and-build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Install Node.js
+              uses: actions/setup-node@v3
+
+            - name: Yarn cache
+              uses: actions/cache@v3
+              id: yarn-cache
+              with:
+                  path: |
+                      node_modules
+                      /home/runner/.cache/Cypress
+                  key: ${{ runner.os }}-yarn-v3-${{ hashFiles('**/yarn.lock') }}
+
+            - name: Install Dependencies
+              if: steps.yarn-cache.outputs.cache-hit != 'true'
+              run: yarn install --immutable
+
+            - name: ESLint Cache
+              uses: actions/cache@v3
+              id: lint-cache
+              with:
+                  path: .eslintcache
+                  key: ${{ runner.os }}-lint-v1-${{ github.head_ref || github.ref || github.run_id }}
+
+            - name: Lint app
+              run: yarn run lint --cache --cache-strategy content --max-warnings 0
