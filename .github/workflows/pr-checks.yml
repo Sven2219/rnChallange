@@ -1,0 +1,15 @@
+name: PR Checks
+# Trigger the workflow on push or pull request,
+on:
+    pull_request:
+        branches:
+            - master
+
+concurrency:
+    group: ${{ github.head_ref || github.ref || github.run_id }}
+    cancel-in-progress: true
+
+jobs:
+    lint-and-build:
+        name: Lint and build
+        uses: ./.github/workflows/lint-and-build.yml
