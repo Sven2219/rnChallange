@@ -8,7 +8,7 @@ import { useAppDispatch } from '/hooks/useAppDispatch';
 import { useAppSelector } from '/hooks/useAppSelector';
 import { translations } from '/i18n/translationHelper';
 import LocalText from '/modules/shared/components/LocalText';
-import { setError } from '/redux/error/errorRedux';
+import { setError } from '/reduxStore/error/errorRedux';
 
 function ErrorWrapper() {
 	const hasError = useAppSelector((state) => state.error.error);

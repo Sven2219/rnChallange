@@ -6,7 +6,6 @@ import { Button } from '@rneui/base';
 import LocalText from '../shared/components/LocalText';
 import { translations } from '/i18n/translationHelper';
 import { globalScreenStyle } from '/const/styles';
-import style from './style/screen';
 import { registerFormNames, switchFormNames, textFieldFormNames, textFieldInputProps } from './form/register';
 import ControlledLocalTextInput from './components/ControlledTextInput';
 import ControlledRadioGroup from './components/ControlledRadioGroup';
@@ -27,7 +26,7 @@ function RegisterScreen({ isLoading, handleRegister }: Props) {
 
 	return (
 		<SafeAreaView style={globalScreenStyle.container}>
-			<LocalText textStyle={style.title} textSize="large">
+			<LocalText textStyle={globalScreenStyle.title} textSize="large">
 				{t(translations.register_screen.title)}
 			</LocalText>
 			{Object.keys(textFieldFormNames).map((el) => (

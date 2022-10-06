@@ -3,9 +3,9 @@ import { useMutation, UseMutationOptions } from 'react-query';
 
 import { userKeys } from './keys';
 import { RegisterFormType } from '/modules/register/form/register';
-import { setError } from '/redux/error/errorRedux';
-import store from '/redux/store';
-import { setUser } from '/redux/user/userRedux';
+import { setError } from '/reduxStore/error/errorRedux';
+import store from '/reduxStore/store';
+import { setUser } from '/reduxStore/user/userRedux';
 import service from '/service/service';
 import { User } from '/types/User';
 

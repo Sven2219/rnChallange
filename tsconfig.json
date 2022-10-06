@@ -15,7 +15,8 @@
       "i18n/*":["./i18n/*"],
       "types/*":["./types/*"],
       "helpers/*":["./helpers/*"],
-      "wrappers/*":["./wrappers/*"]
+      "wrappers/*":["./wrappers/*"],
+      "reduxStore/*":["./reduxStore/*"]
     }
   }
 }

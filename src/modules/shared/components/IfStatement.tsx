@@ -1,5 +1,5 @@
 interface Props {
-	statement?: boolean;
+	statement: boolean;
 	children: JSX.Element;
 }
 
