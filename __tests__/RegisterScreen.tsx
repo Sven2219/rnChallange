@@ -3,13 +3,20 @@ import { render } from '@testing-library/react-native';
 
 import RegisterScreen from '/modules/register/RegisterScreen';
 import testIds from '/const/testIds';
+import { useForm } from 'react-hook-form';
 
-function RegisterScreenTest() {
-	return <RegisterScreen goForward={() => console.log('forward')} />;
+interface Props {
+	submitFunc: () => void;
 }
 
-test('Test setup', () => {
-	const { getByTestId } = render(<RegisterScreenTest />);
-	const registerText = getByTestId(testIds.registerText);
-	expect(registerText);
+function RegisterScreenTest({ submitFunc }: Props) {
+	const methods = useForm<any>();
+
+	return <RegisterScreen isLoading={false} handleRegister={submitFunc} />;
+}
+
+test('Email should display error', () => {
+	const submitFunc = jest.fn();
+	const { getByTestId } = render(<RegisterScreenTest submitFunc={submitFunc} />);
+	expect(true);
 });

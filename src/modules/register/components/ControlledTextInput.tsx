@@ -1,22 +1,36 @@
 import React from 'react';
+import { TextInputProps, View } from 'react-native';
+import { Input } from '@rneui/base';
 import { Controller, useFormContext } from 'react-hook-form';
-import { TextInput, View } from 'react-native';
+
+import { RulesInterface } from '/const/rules';
 
 interface Props {
 	fieldName: string;
-	defaultValue: string;
+	inputProps?: TextInputProps;
+	rules?: Partial<RulesInterface>;
 }
 
-function ControlledLocalTextInput({ fieldName, defaultValue }: Props) {
-	const { control } = useFormContext();
+function ControlledLocalTextInput({ fieldName, inputProps, rules }: Props) {
+	const {
+		control,
+		formState: { errors },
+	} = useFormContext();
 
 	return (
 		<View>
 			<Controller
 				control={control}
 				name={fieldName}
-				defaultValue={defaultValue}
-				render={({ field: { value } }) => <TextInput value={value as string} />}
+				rules={rules}
+				render={({ field: { value, onChange } }) => (
+					<Input
+						{...inputProps}
+						value={value as string}
+						errorMessage={errors[fieldName]?.message as string}
+						onChangeText={onChange}
+					/>
+				)}
 			/>
 		</View>
 	);

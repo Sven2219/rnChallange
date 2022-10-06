@@ -1,7 +1,7 @@
 import { TextStyle } from 'react-native';
 
 import { TextSize } from '../components/LocalText';
-import globalStyles from '/const/styles';
+import { globalStyles } from '/const/styles';
 
 export function getTextSizeStyle(textSize: TextSize): TextStyle {
 	if (textSize === 'tiny') {
@@ -10,5 +10,8 @@ export function getTextSizeStyle(textSize: TextSize): TextStyle {
 	if (textSize === 'small') {
 		return globalStyles.smallText;
 	}
-	return globalStyles.mediumText;
+	if (textSize === 'medium') {
+		return globalStyles.mediumText;
+	}
+	return globalStyles.largeText;
 }
