@@ -5,7 +5,21 @@
 				"title": "Home screen"
 			},
 			"register_screen": {
-				"title": "Register screen"
+				"title": "Register",
+				"button": "Submit"
+			},
+			"rules": {
+				"required": "This field is required",
+				"email": "Email is incorrect"
+			},
+			"radio_group": {
+				"male": "Male",
+				"female": "Female",
+				"active": "Active",
+				"inactive": "Inactive"
+			},
+			"global_error": {
+				"title": "An error has occurred"
 			}
 		}
 	}

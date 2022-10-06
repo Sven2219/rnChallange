@@ -1,13 +1,23 @@
 import React from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
 
-import { useLocalNavigation } from '/hooks/useLocalNavigation';
-import { Routes } from '/navigation/routes';
 import RegisterScreen from './RegisterScreen';
+import { useCreateUser } from '/service/user/queries/useCreateUser';
+import { RegisterFormType } from './form/register';
 
 function RegisterContainer() {
-	const { navigation } = useLocalNavigation<Routes.Register>();
+	const formMethods = useForm<RegisterFormType>();
+	const { mutate: createUser, isLoading } = useCreateUser();
 
-	return <RegisterScreen goForward={() => navigation.navigate(Routes.Home)} />;
+	const handleRegister = (data: RegisterFormType) => {
+		createUser(data);
+	};
+
+	return (
+		<FormProvider {...formMethods}>
+			<RegisterScreen isLoading={isLoading} handleRegister={formMethods.handleSubmit(handleRegister)} />
+		</FormProvider>
+	);
 }
 
 export default RegisterContainer;
