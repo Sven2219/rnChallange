@@ -43,7 +43,6 @@ buck-out/
 \.buckd/
 *.keystore
 !debug.keystore
-configValues.ts
 
 # fastlane
 #
