@@ -1,4 +1,5 @@
 import { TextInputProps } from 'react-native';
+
 import { getFormNames } from '/helpers/form';
 import { GenderType, StatusType } from '/types/User';
 

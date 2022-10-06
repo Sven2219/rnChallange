@@ -12,6 +12,7 @@ import ControlledRadioGroup from './components/ControlledRadioGroup';
 import testIds from '/const/testIds';
 import { registerRules } from './helpers/rules';
 import { GenderType, StatusType } from '/types/User';
+import { colors } from '/const/colors';
 
 type TextFieldFormNames = keyof typeof textFieldFormNames;
 type SwitchFieldFormNames = keyof typeof switchFormNames;
@@ -55,6 +56,7 @@ function RegisterScreen({ isLoading, handleRegister }: Props) {
 				testID={testIds.registerButton}
 				title={t(translations.register_screen.button)}
 				onPress={handleRegister}
+				color={colors.black}
 			/>
 		</SafeAreaView>
 	);

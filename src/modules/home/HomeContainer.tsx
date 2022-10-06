@@ -1,6 +1,6 @@
 import React from 'react';
-import LoadingIndicator from './components/LoadingIndicator';
 
+import LoadingIndicator from './components/LoadingIndicator';
 import HomeScreen from './HomeScreen';
 import { useAppSelector } from '/hooks/useAppSelector';
 import { useGetPosts } from '/service/user/queries/useGetPosts';
