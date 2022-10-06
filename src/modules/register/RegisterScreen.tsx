@@ -1,21 +1,17 @@
 import React from 'react';
-import { SafeAreaView, Text, TouchableOpacity } from 'react-native';
 import { useTranslation } from 'react-i18next';
-
-import { translations } from '/i18n/translationHelper';
-import testIds from '/const/testIds';
+import { Input } from '@rneui/themed';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface Props {
-	goForward: () => void;
+	handleRegister: () => void;
 }
 
-function RegisterScreen({ goForward }: Props) {
+function RegisterScreen({ handleRegister }: Props) {
 	const { t } = useTranslation();
 	return (
 		<SafeAreaView>
-			<TouchableOpacity onPress={goForward}>
-				<Text testID={testIds.registerText}>{t(translations.register_screen.title)}</Text>
-			</TouchableOpacity>
+			<Input placeholder="BASIC INPUT" />
 		</SafeAreaView>
 	);
 }

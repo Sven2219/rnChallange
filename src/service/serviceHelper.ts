@@ -9,7 +9,7 @@ export function createURLFromSlug(curr: string) {
 	return `${configValues.BACKEND_SCHEME}${curr}`;
 }
 
-export const serviceNames = ['user'] as const;
+export const serviceNames = ['users'] as const;
 
 type ArrayToObject<Arr extends ReadonlyArray<string> = []> = {
 	[K in Arr[number]]: ServiceClient;
@@ -23,7 +23,7 @@ export type SendFn = (cl: AxiosRequestConfig) => Promise<unknown>;
 export const services = serviceNames.reduce(
 	(prev, curr) => ({
 		...prev,
-		[curr]: new ServiceClient(createURLFromSlug(curr), '', AxiosInstance),
+		[curr]: new ServiceClient(createURLFromSlug(curr), configValues.TOKEN, AxiosInstance),
 	}),
 	{} as ServiceInstances
 );

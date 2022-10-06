@@ -1,4 +1,17 @@
+export enum GenderType {
+	MALE = 'male',
+	FEMALE = 'female',
+}
+
+export enum StatusType {
+	ACTIVE = 'active',
+	INACTIVE = 'inactive',
+}
+
 export interface User {
-	firstName: string;
-	lastName: string;
+	id: number;
+	name: string;
+	email: string;
+	gender: GenderType;
+	status: StatusType;
 }

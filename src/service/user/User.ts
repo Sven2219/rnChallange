@@ -1,5 +1,7 @@
+import { User } from '/types/User';
+
 interface UsersService {
-	getUsersProfile(): Promise<void>;
+	createUser(data: User): Promise<User>;
 }
 
 export default UsersService;

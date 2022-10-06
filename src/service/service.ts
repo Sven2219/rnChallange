@@ -1,7 +1,7 @@
 import usersService from './user/UserService';
 
 const service = {
-	user: usersService,
+	users: usersService,
 };
 
 export default service;

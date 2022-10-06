@@ -21,7 +21,7 @@ export class ServiceClient {
 	call(axiosRequestType: AxiosRequestType, method: string, params?: object, queryParams?: string) {
 		if (axiosRequestType === AxiosRequestType.GET) {
 			return this.axiosInstance.get(`${this.url}${method}`, {
-				// headers: { Authorization: `Bearer ${this.token}` },
+				headers: { Authorization: `Bearer ${this.token}` },
 				params,
 			});
 		}
