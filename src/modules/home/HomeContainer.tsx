@@ -1,13 +1,18 @@
 import React from 'react';
 
+import LoadingIndicator from './components/LoadingIndicator';
 import HomeScreen from './HomeScreen';
-import { useLocalNavigation } from '/hooks/useLocalNavigation';
-import { Routes } from '/navigation/routes';
+import { useAppSelector } from '/hooks/useAppSelector';
+import { useGetPosts } from '/service/user/queries/useGetPosts';
 
 function HomeContainer() {
-	const { navigation } = useLocalNavigation<Routes.Home>();
+	const user = useAppSelector((state) => state.user.user);
+	const { data, isLoading } = useGetPosts(user?.id ?? 0, { enabled: !!user?.id });
 
-	return <HomeScreen goBack={() => navigation.goBack()} />;
+	if (isLoading) {
+		return <LoadingIndicator />;
+	}
+	return <HomeScreen posts={data} />;
 }
 
 export default HomeContainer;

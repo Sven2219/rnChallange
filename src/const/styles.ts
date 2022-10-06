@@ -23,6 +23,9 @@ export const globalScreenStyle = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
+	title: {
+		textAlign: 'center',
+	},
 });
 
 export const globalStyles = StyleSheet.create({

@@ -2,7 +2,8 @@
 	"en": {
 		"translation": {
 			"home_screen": {
-				"title": "Home screen"
+				"title": "Posts",
+				"empty_state": "You don't have any posts"
 			},
 			"register_screen": {
 				"title": "Register",

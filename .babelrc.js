@@ -15,6 +15,7 @@ module.exports = {
 						types: './types/',
 						helpers: './helpers/',
 						wrappers: './wrappers/',
+						reduxStore: './reduxStore/',
 					},
 				],
 				extensions: ['.js', '.jsx', '.ts', '.tsx'],

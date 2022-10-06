@@ -19,6 +19,8 @@ const testIds = {
 		inactiveText: 'inactive-text',
 	},
 	registerButton: 'register_button_test_id',
+	postsEmptyState: 'posts_empty_state_test_id',
+	postList: 'post_list_test_id',
 };
 
 export default testIds;
