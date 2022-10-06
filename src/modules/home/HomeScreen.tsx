@@ -10,6 +10,7 @@ import { Post } from '/types/Posts';
 import LocalText from '../shared/components/LocalText';
 import PostItem from './components/PostItem';
 import IF from '../shared/components/IfStatement';
+import testIds from '/const/testIds';
 
 interface Props {
 	posts?: Post[];
@@ -27,11 +28,12 @@ function HomeScreen({ posts }: Props) {
 			</LocalText>
 			<IF statement={!posts || posts.length === 0}>
 				<View style={[globalScreenStyle.container, globalScreenStyle.centerColumn]}>
-					<LocalText>{t(translations.home_screen.empty_state)}</LocalText>
+					<LocalText testID={testIds.postsEmptyState}>{t(translations.home_screen.empty_state)}</LocalText>
 				</View>
 			</IF>
 			<IF statement={!!posts && posts?.length > 0}>
 				<FlatList
+					testID={testIds.postList}
 					data={posts}
 					renderItem={renderItem}
 					keyExtractor={keyExtractor}

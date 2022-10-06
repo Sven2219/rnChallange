@@ -58,8 +58,8 @@ test('Submit form with invalid email and name', async () => {
 	});
 	const emailError = getByText(translations.rules.email);
 	const nameError = getByText(translations.rules.required);
-	expect(emailError);
-	expect(nameError);
+	expect(emailError).not.toBeNull();
+	expect(nameError).not.toBeNull();
 });
 
 test('Radio group click', async () => {
