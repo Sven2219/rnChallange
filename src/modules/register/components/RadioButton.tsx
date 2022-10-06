@@ -19,7 +19,10 @@ function RadioButton({ item, isActive, onPress }: Props) {
 	return (
 		<View style={globalScreenStyle.centerColumn}>
 			<TouchableOpacity onPress={onPress} testID={item}>
-				<LocalText textSize="medium" textStyle={{ ...(isActive ? style.active : style.inactive) }}>
+				<LocalText
+					textSize="medium"
+					testID={`${item}-text`}
+					textStyle={{ ...(isActive ? style.active : style.inactive) }}>
 					{t(translations.radio_group[item])}
 				</LocalText>
 			</TouchableOpacity>

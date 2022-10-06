@@ -6,6 +6,18 @@ const testIds = {
 		status: 'register_status_switch_test_id',
 		gender: 'register_gender_switch_test_id',
 	},
+	genderRadioGroup: {
+		maleButton: 'male',
+		femaleButton: 'female',
+		maleText: 'male-text',
+		femaleText: 'female-text',
+	},
+	statusRadioGroup: {
+		active: 'active',
+		inactive: 'inactive',
+		activeText: 'active-text',
+		inactiveText: 'inactive-text',
+	},
 	registerButton: 'register_button_test_id',
 };
 
